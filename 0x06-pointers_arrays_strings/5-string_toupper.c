@@ -1,21 +1,29 @@
-#include "holberton.h"
-
+#include "main.h"
+#include <stdio.h>
 /**
- * string_toupper - changes all lowercase letters of a string
- * to uppercase
- * @s: string to modify
- *
- * Return: the resulting string
+ * _strstr - finds the first occurence of the substring needle
+ * in the string haystack
+ * @haystack: paramter for haystack
+ * @needle: paramter for needle
+ * Return: pointer to the beginning of the located substring
  */
-char *string_toupper(char *s)
+char *_strstr(char *haystack, char *needle)
 {
-	int i;
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (*haystack != '\0')
 	{
-		if (s[i] >= 'a' && s[i] <= 'z')
-			s[i] = s[i] - 32;
-	}
+		char *beginning = haystack;
+		char *pattern = needle;
 
-	return (s);
+		while (*pattern == *haystack && *pattern != '\0'
+		       && *haystack != '\0')
+		{
+			haystack++;
+			pattern++;
+		}
+		if (*pattern == '\0')
+			return (beginning);
+		haystack = beginning + 1;
+	}
+	return ('\0');
 }
