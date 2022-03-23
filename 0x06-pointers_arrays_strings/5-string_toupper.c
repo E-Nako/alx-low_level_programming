@@ -1,4 +1,4 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
  * string_toupper - changes all lowercase letters of a string
@@ -17,5 +17,5 @@ char *string_toupper(char *s)
 			s[i] = s[i] - 32;
 	}
 
-i	return (s);
+	return (s);
 }
