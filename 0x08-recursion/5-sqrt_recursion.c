@@ -1,36 +1,32 @@
-#include "main.h"
+#include "holberton.h"
+
+int natural_sqrt_recursion(int n, int i);
 
 /**
- *_sqrt_recursion -  func that returns the natural square root of a number.
- * @n: for number input
- * Return: 0
+ * *_sqrt_recursion - returns natural square root
+ * @n: number to be checked
+ *
+ * Return: returns the squared root
  */
-
 int _sqrt_recursion(int n)
 {
-	if (n == 0)
-		return (0);
-	else if (n == 1)
-		return (1);
-	else if (n < 0)
+	if (n < 0)
 		return (-1);
-	else
-		return (helper(n, 1));
+	return (natural_sqrt_recursion(n, 0));
 }
 
 /**
- * helper - blank
- * @n: number
- * @i: incrementor
- * Return: -1;
+ * natural_sqrt_recursion - finds natural sqrt
+ * @n: number to calculate
+ * @i: iterator
+ *
+ * Return: natural square root
  */
-
-int helper(int n, int i)
+int natural_sqrt_recursion(int n, int i)
 {
-	if (n == (i * i))
-		return (i);
-	else if (n > (i * i))
-		return (helper(n, i + 1));
-	else
+	if (i * i > n)
 		return (-1);
+	if (i * i == n)
+		return (i);
+	return (natural_sqrt_recursion(n, i + 1));
 }
