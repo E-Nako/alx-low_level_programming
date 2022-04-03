@@ -1,1 +1,1 @@
-This is all about more C-functions
+This is about C-Static Libraries
