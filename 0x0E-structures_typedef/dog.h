@@ -7,7 +7,7 @@
  * @age: age of the dog?
  * @owner: who owns the dog?
  *
- * Description: descripbes the dog
+ * Description: describes the dog
  */
 struct dog
 {
@@ -28,4 +28,4 @@ void free_dog(dog_t *d);
 char *_strcpy(char *dest, char *src);
 int _strlen(char *s);
 
-#endif}
+#endif
